@@ -1,6 +1,6 @@
 # John Von Neumann (1903-1957)
 
-## Early History
+## History
 * Hungarian
 * 1929 Hungary --> America
 * Lutheran School - Mostly Jews
@@ -24,6 +24,9 @@
 			* Prolific mathematician
 			* More than 500 collaborators
 		* These other 'geniuses' said Neumann was the only true genius they ever met
+* 1929 Hungary --> America
+	* Princeton (IAS) till the grave
+	* although he announced his intention to resign and become a professor at large at the University of California shortly before he died! Almost lucky us
 
 ## Major Contributions:
 * Application of operator theory to quantum mechanics, 
