@@ -4,7 +4,7 @@
 * Hungarian
 * 1929 Hungary --> America
 * Lutheran School - Mostly Jews
-	* The Martians 
+	* The Martians (Neumann high school associates)
 		* Theodore Von Karman 	
 			* Mathematician, aerospace engineer, and physicist
 		* George de Hevesy 		
@@ -50,7 +50,8 @@
 	* artificial viscosity that improved the understanding of shock waves
 
 ## Unfinished Book - The Computer and the Brain
-
+### The Computer and the Brain (1958) 
+### Published version of the Silliman Lectures which John von Neumann was invited to deliver at Yale in 1956
 1. Intro
 
 2. The Computer
