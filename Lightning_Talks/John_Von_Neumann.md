@@ -52,6 +52,7 @@
 ## Unfinished Book - The Computer and the Brain
 ### The Computer and the Brain (1958) 
 ### Published version of the Silliman Lectures which John von Neumann was invited to deliver at Yale in 1956
+
 1. Intro
 	*The first part discusses the computer: its procedures, control mechanisms, and other characteristics. 
 	*The second part focuses on the brain. 
@@ -70,7 +71,7 @@
 	* Recognized the non-linear character of the operation of the brain
 	* Preferred to express this non-linearity as a combination of digital and analog constructions of the machinery
 		* To exploit the computer metaphor
-		
+
 4. Memory and higher-order functions
 	* Memory must be large ~2.8 x 10^20 bits (still large by modern comp standards
 	* How and where is memory stored
