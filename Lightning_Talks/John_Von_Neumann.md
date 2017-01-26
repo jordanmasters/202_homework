@@ -2,7 +2,6 @@
 
 ## History
 * Hungarian
-* 1929 Hungary --> America
 * Lutheran School - Mostly Jews
 	* The Martians (Neumann high school associates)
 		* Theodore Von Karman 	
@@ -54,9 +53,9 @@
 ### Published version of the Silliman Lectures which John von Neumann was invited to deliver at Yale in 1956
 
 1. Intro
-	*The first part discusses the computer: its procedures, control mechanisms, and other characteristics. 
-	*The second part focuses on the brain. 
-	*The neural system is systematically compared with the computer in terms of the state-of-the-art at that time in the computer sciences. In what seems to have been the groundwork for a third part—but it is not organized as a separate part—Von Neumann draws some conclusions from the comparison with respect to the role of code and language. 
+	* The first part discusses the computer: its procedures, control mechanisms, and other characteristics. 
+	* The second part focuses on the brain. 
+	* The neural system is systematically compared with the computer in terms of the state-of-the-art at that time in the computer sciences. In what seems to have been the groundwork for a third part—but it is not organized as a separate part—Von Neumann draws some conclusions from the comparison with respect to the role of code and language. 
 
 2. The Computer
 	* The brain can prima facie be considered as a digital computer
