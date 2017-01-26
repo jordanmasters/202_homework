@@ -1,7 +1,6 @@
 # John Von Neumann (1903-1957)
 
 ## Early History
-
 * Hungarian
 * 1929 Hungary --> America
 * Lutheran School - Mostly Jews
@@ -25,21 +24,24 @@
 			* Prolific mathematician
 			* More than 500 collaborators
 		* These other 'geniuses' said Neumann was the only true genius they ever met
+
 ## Major Contributions:
-* application of operator theory to quantum mechanics, 
-* development of functional analysis
-* concept of cellular automata
-* His analysis of the structure of self-replication preceded the discovery of the structure of DNA.
+* Application of operator theory to quantum mechanics, 
+* Concept of cellular automata (1D)
+* Analysis of the structure of self-replication preceded the discovery of the structure of DNA.
+	* Self-replicating robots
 * Manhattan project 
-	* math model of explosive lenses
+	* Math model of explosive lenses
 	* Nuclear physics
 * Game theory
-* Set Theory
+* Set Theory 
+	* Georg Cantor
+	* David Hilbert 
 * Ergodic Theory
 	* branch of mathematics that studies dynamical systems with an invariant measure
 	* A central concern of ergodic theory is the behavior of a dynamical system when it is allowed to run for a long time
-		* The first result in this direction claims that almost all points in any subset of the phase space eventually revisit the set
-		* statistically speaking, the system that evolves for a long time "forgets" its initial state. 
+		* The first result in this direction (Poincaré Theorm) claims that almost all points in any subset of the phase space eventually revisit the set
+		* Neumann + Birkhoff in some cases -> the system that evolves for a long time "forgets" its initial state. 
 * Lattice Theory
 * Fluid Dynamics (numerical hydrodynamics)
 	* artificial viscosity that improved the understanding of shock waves
