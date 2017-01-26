@@ -53,12 +53,28 @@
 ### The Computer and the Brain (1958) 
 ### Published version of the Silliman Lectures which John von Neumann was invited to deliver at Yale in 1956
 1. Intro
+	*The first part discusses the computer: its procedures, control mechanisms, and other characteristics. 
+	*The second part focuses on the brain. 
+	*The neural system is systematically compared with the computer in terms of the state-of-the-art at that time in the computer sciences. In what seems to have been the groundwork for a third part—but it is not organized as a separate part—Von Neumann draws some conclusions from the comparison with respect to the role of code and language. 
 
 2. The Computer
+	* The brain can prima facie be considered as a digital computer
+	* Serial vs Parallel computing
+		* The brain is heavily parallel
+		* But certain elements of serial processing cannot be reduced to parallel processing
 
 3. The Brain
-
+	* Description of the brain and the neuron in such a way that provides meaningful comparisons with the computer
+	* Used a Computer scientist perspective, deliberately reductionistic (he admits this is too simple)
+		* Ex: Never mentions cortical and lower-level functions, even though these distinctions had been discovered already
+	* Recognized the non-linear character of the operation of the brain
+	* Preferred to express this non-linearity as a combination of digital and analog constructions of the machinery
+		* To exploit the computer metaphor
+		
 4. Memory and higher-order functions
-
-5. Computation, communication, and control)
-
+	* Memory must be large ~2.8 x 10^20 bits (still large by modern comp standards
+	* How and where is memory stored
+	* Knew of Turning, "short codes"
+	* The language of the brain can then be considered as a short code
+	* Statistical properties other than the pulse-trains along neurons can be expected to contribute to the transmission of information in what we would nowadays call a "non-linear way"
+	* These additional channels allow for the bypassing of a lot of computation (cf. Rumelhart et al., 1986)
