@@ -3,10 +3,10 @@
 ### Execution Workflow 1
 #### Tools: command line, python interpreter 
 #### Code: no files, all in live interpreter
-	1. start interpreter
-		`python`
-	2. write code in interpreter
-		''' def myFunc():'''
+1. start interpreter
+	`python`
+2. write code in interpreter
+	''' def myFunc():'''
 #### Usage:			 	
 	1. call functions from same interpreter session only
 		''' >>> myFunction() '''
