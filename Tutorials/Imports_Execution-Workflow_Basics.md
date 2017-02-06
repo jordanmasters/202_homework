@@ -7,8 +7,8 @@
 1. start interpreter
 	* `python`
 2. write code in interpreter
-	* `def myFunc(x):
-			return x^2:`
+`def myFunc(x):
+	return x^2:`
 
 #### Usage:	python interpreter	 	
 1. call functions from same interpreter session only
