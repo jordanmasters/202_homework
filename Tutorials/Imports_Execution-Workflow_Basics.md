@@ -3,13 +3,15 @@
 ### Execution Workflow 1
 #### Tools: command line, python interpreter 
 #### Code: no files, all in live interpreter
+
 1. start interpreter
 	* `python`
 2. write code in interpreter
-	1. `def myFunc():`
+	* `def myFunc():`
+
 #### Usage:			 	
 1. call functions from same interpreter session only
-	`myFunction()`
+	*`myFunction()`
 #### Pros:								
 1. check simple or internet code 
 2. check your intuitions about data manipulation
