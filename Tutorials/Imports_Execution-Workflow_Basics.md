@@ -29,21 +29,21 @@
 	* only functions in .py file			
 
 #### Usage: python interpreter				
-	1. move to into myfile.py file dir
-		* `$ cd`
-	2. start interpreter
-		* `$ python`
-	3. load module into current terminal session
-		* `>>> import myfile`
-	4. call function from module
+1. move to into myfile.py file dir
+	* `$ cd`
+2. start interpreter
+	* `$ python`
+3. load module into current terminal session
+	* `>>> import myfile`
+4. call function from module
 		* `>>> myfile.myFunction()`
 
 #### Pros:					
-	1. Using the python interpreter to call functions can be useful if you are working with functions that output something, and you want to have a simple interactive environment to try various inputs and see their outputs, e.g. search engines, chatbots, question asking systems, etc.
-	2. interactive way to import various modules or packages and play with them live in the interpreter.
+1. Using the python interpreter to call functions can be useful if you are working with functions that output something, and you want to have a simple interactive environment to try various inputs and see their outputs, e.g. search engines, chatbots, question asking systems, etc.
+2. interactive way to import various modules or packages and play with them live in the interpreter.
 
 #### Cons:					
-	1. usage commands are not saved, often we want to save the function calls somewhere
+1. usage commands are not saved, often we want to save the function calls somewhere
 
 ### Execution Workflow 3
 ###$ terminal + editor: 1 file: function, followed by function call in .py script
