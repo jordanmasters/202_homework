@@ -2,21 +2,19 @@
 ## Simp,e Python Execution Workflows
 ### Execution Workflow 1
 #### Tools: command line, python interpreter 
-##### Code: 		
-	--> Req: no files	
-	''' python '''
-	
+#### Code: no files, all in live interpreter
 	1. start interpreter
-		''' python '''
+		`python`
 	2. write code in interpreter
-2. Usage:			 	
+		''' def myFunc():'''
+#### Usage:			 	
 	1. call functions from same interpreter session only
 		''' >>> myFunction() '''
-3. Pros:								
+#### Pros:								
 	1. check simple or internet code 
 	2. check your intuitions about data manipulation
 		* ex: what does myString[:-1] give me if myString = 'Hello'?
-4. Cons:								
+#### Cons:								
 	1. not resuable or saved
 	2. no editor
 	3. inefficient when writing more than a few lines of code
