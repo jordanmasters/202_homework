@@ -7,7 +7,8 @@
 1. start interpreter
 	* `python`
 2. write code in interpreter
-	* `def myFunc():`
+	* `def myFunc(x):
+			return x^2:`
 
 #### Usage:	python interpreter	 	
 1. call functions from same interpreter session only
@@ -26,7 +27,7 @@
 ### Execution Workflow 2
 #### Tools: command line, python interpreter, text editor: 
 #### Code: 1 module (file)
-* only functions in .py file			
+* Instead of writing our functions in the temporary memory of the interpreter, we can write them in a .py file somewhere
 
 #### Usage: python interpreter				
 1. move to into myfile.py file dir
@@ -37,6 +38,7 @@
 	* `>>> import myfile`
 4. call function from module
 	* `>>> myfile.myFunction()`
+
 
 #### Pros:					
 1. Using the python interpreter to call functions can be useful if you are working with functions that output something, and you want to have a simple interactive environment to try various inputs and see their outputs, e.g. search engines, chatbots, question asking systems, etc.
