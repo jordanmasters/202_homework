@@ -1,32 +1,32 @@
 # Python Basics
 
-## Scrapy Demo 
-1. make a new project directory somewhere
+## Scrapy Demo - Getting the Data
+1) make a new project directory somewhere
 ```shell
 mkdir PythonBasicsTut1 && cd $_
 ```
 
-2. Clone a simple quotes bot repo provided by scrapy
+2) Clone a simple quotes bot repo provided by scrapy
 ```shell
 git clone https://github.com/scrapy/quotesbot.git quotesbot
 cd quotesbot
 mkdir scrapedData
 ```
-3. Let's start using Scrapy! Make sure you have it installed
+3) Let's start using Scrapy! Make sure you have it installed
 ```shell
 scrapy
 if it is not a command then do:
 pip install scrapy
 ```
-4. Check the spiders we have available
+4) Check the spiders we have available
 ```shell
-spacy list
+scrapy list
 ```
-6. Use one of the spiders to pull and save data as .json or .csv
+6) Use one of the spiders to pull and save data as .json or .csv
 ```shell
 scrapy crawl toscrape-css -o scrapedData/quotes.json
 ```
-7. Let's do it again to and make 3 csv files we can work with later 
+7) Let's do it again to and make 3 csv files we can work with later 
 * yes, they will all have the same exact data, but importantly, they will also all have the same data structure)
 ```shell
 scrapy crawl toscrape-css -o scrapedData/quotes1.csv
@@ -50,7 +50,15 @@ python
 ```python
 import os
 import csv
+
+# change/split to simple check_csvs function for inside interpreter and merge_csvs with part to complete
+
+
 def merge_csvs(directory, outfile):
+	"""	
+	:param directory: the directory with csv files
+	:returns: return list of lists of merged csv contnt  
+	"""
 	merged_csv_list = []
 	csv_count = 0
 	header = []
@@ -70,6 +78,7 @@ def merge_csvs(directory, outfile):
 	print 'merged', csv_count, 'csv files into a python list'
 	print 'merged list has', len(merged_csv_list), 'rows'
 	return merged_csv_list, header
+
 
 
 
