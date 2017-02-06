@@ -6,18 +6,18 @@
 1. start interpreter
 	`python`
 2. write code in interpreter
-	''' def myFunc():'''
+	`def myFunc():`
 #### Usage:			 	
-	1. call functions from same interpreter session only
-		''' >>> myFunction() '''
+1. call functions from same interpreter session only
+	`myFunction()`
 #### Pros:								
-	1. check simple or internet code 
-	2. check your intuitions about data manipulation
-		* ex: what does myString[:-1] give me if myString = 'Hello'?
+1. check simple or internet code 
+2. check your intuitions about data manipulation
+	1. ex: what does myString[:-1] give me if myString = 'Hello'?
 #### Cons:								
-	1. not resuable or saved
-	2. no editor
-	3. inefficient when writing more than a few lines of code
+1. not resuable or saved
+2. no editor
+3. inefficient when writing more than a few lines of code
 
 ### Execution Workflow 2
 #### Tools: command line, python interpreter, text editor: 
