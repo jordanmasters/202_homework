@@ -1,7 +1,29 @@
-# Anaconda
+# Python Basics
+
+## Scrapy Demo 
+1. make a new project directory somewhere
+`mkdir PythonBasicsTut1 && cd $_`
+
+2. clone a quotes bot repo provided by scrapy
+`git clone https://github.com/scrapy/quotesbot.git quotesbot
+cd quotesbot
+`
+3. Make sure you have Scrapy installed
+`$ pip install scrapy`
+4. Check the spiders we have available
+`spacy list`
+5. make a directory for scraped data
+`mkdir data`
+5. Use one to pull and save file as .json or .csv
+`scrapy crawl toscrape-css -o quotes.json`
+
+
+
+
+
 ## Simple Python Execution Workflows
 
-### Execution Workflow 1 - Interpreter only to write and execute code
+### Execution Workflow 1 - Interpreter to write and execute code
 #### Tools: command line, python interpreter 
 #### Code: no files, all in live interpreter
 
@@ -69,7 +91,7 @@
 	* This is because the function is tied to the function call, they should be separate, in different files.
 	* Also, from a git perspective, you should not need to edit the file that contains the function if all you are doing is changing how you are calling the function i.e. what arguments you pass it in some specific instance
 
-### Execution Workflow 4 - Command line to import and run code from script file w/ modular code
+### Execution Workflow 4 - Command line to run code from script file w/ modular code
 #### terminal + editor  
 #### Code: 2 files:			
 1. 1 file with functions only
@@ -84,7 +106,7 @@
 
 #### Pros:					
 1. Modular, Resuable 
-2. often we want to call more than one command or function in some specific order
+2. often we want to call more a set of command in some specific order, and save it for later
 3. DRY - Don't Repeat Yourself 
 
 #### Cons:					
