@@ -2,14 +2,21 @@
 
 ## Scrapy Demo 
 1. make a new project directory somewhere
-`mkdir PythonBasicsTut1 && cd $_`
+```shell
+mkdir PythonBasicsTut1 && cd $_
+```
 
 2. clone a quotes bot repo provided by scrapy
-`git clone https://github.com/scrapy/quotesbot.git quotesbot
+```shell
+git clone https://github.com/scrapy/quotesbot.git quotesbot
 cd quotesbot
-`
+```
 3. Make sure you have Scrapy installed
-`$ pip install scrapy`
+```shell
+$ scrapy
+if it is not a command:
+$ pip install scrapy
+```
 4. Check the spiders we have available
 ```shell
 spacy list
@@ -17,13 +24,20 @@ spacy list
 5. make a directory for scraped data
 ``
 ```bash
-mkdir data
+mkdir scrapedData
 ```
 
-5. Use one to pull and save file as .json or .csv
-`scrapy crawl toscrape-css -o quotes.json`
-
-
+6. Use one of the spiders to pull and save data as .json or .csv
+```shell
+scrapy crawl toscrape-css -o scrapedData/quotes.json
+```
+7. Let's do it again to and make 3 csv files we can work with later 
+* yes, they will all have the same exact data, but importantly, they will also all have the same data structure)
+```shell
+scrapy crawl toscrape-css -o scrapedData/quotes1.csv
+scrapy crawl toscrape-css -o scrapedData/quotes2.csv
+scrapy crawl toscrape-css -o scrapedData/quotes3.csv
+```
 
 
 
