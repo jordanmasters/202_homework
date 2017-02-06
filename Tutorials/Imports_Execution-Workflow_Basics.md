@@ -7,11 +7,10 @@
 1. start interpreter
 	* `python`
 2. write code in interpreter
-`def myFunc(x):
-	return x^2:`
 ```python
-s = "Python syntax highlighting"
-print s
+def myFunc(x):
+	return x^2
+
 ```
 #### Usage:	python interpreter	 	
 1. call functions from same interpreter session only
