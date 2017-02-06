@@ -12,10 +12,12 @@
 #### Usage:			 	
 1. call functions from same interpreter session only
 	*`myFunction()`
+
 #### Pros:								
 1. check simple or internet code 
 2. check your intuitions about data manipulation
-	1. ex: what does myString[:-1] give me if myString = 'Hello'?
+	1. ex: what does `myString[:-1]` give me when `myString = 'Hello'`?
+
 #### Cons:								
 1. not resuable or saved
 2. no editor
