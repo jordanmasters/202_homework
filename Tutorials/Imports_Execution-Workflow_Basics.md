@@ -2,11 +2,10 @@
 ## Simp,e Python Execution Workflows
 ### Execution Workflow 1
 #### Tools: command line, python interpreter 
-###### 
 1. Code: 		
-	* Req: no files		
+	###### Req: no files		
 	1. start interpreter
-		$ python
+		--> python
 	2. write code in interpreter
 2. Usage:			 	
 	1. call functions from same interpreter session only
