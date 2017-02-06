@@ -9,7 +9,10 @@
 2. write code in interpreter
 `def myFunc(x):
 	return x^2:`
-
+```python
+s = "Python syntax highlighting"
+print s
+```
 #### Usage:	python interpreter	 	
 1. call functions from same interpreter session only
 	* `myFunction()`
