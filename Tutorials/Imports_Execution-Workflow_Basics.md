@@ -1,6 +1,7 @@
 # Anaconda
-## Simp,e Python Execution Workflows
-### Execution Workflow 1
+## Simple Python Execution Workflows
+
+### Execution Workflow 1 - Interpreter only to write and execute code
 #### Tools: command line, python interpreter 
 #### Code: no files, all in live interpreter
 
@@ -8,14 +9,15 @@
 	* `python`
 2. write code in interpreter
 ```python
-def myFunc(x):
-	return x^2
-
+>>> def myFunc(x):
+>>>		return x^2
 ```
 #### Usage:	python interpreter	 	
 1. call functions from same interpreter session only
-	* `myFunction()`
-
+```python
+>>> myFunc(4):
+>>> 16
+```
 #### Pros:								
 1. check simple code (one liners), often w/ toy data 
 2. check your intuitions about data manipulation
@@ -26,7 +28,7 @@ def myFunc(x):
 2. no editor
 3. inefficient when writing more than a few lines of code
 
-### Execution Workflow 2
+### Execution Workflow 2 - Interpreter to import code from custom modules and execute code
 #### Tools: command line, python interpreter, text editor: 
 #### Code: 1 module (file)
 * Instead of writing our functions in the temporary memory of the interpreter, we can write them in a .py file somewhere
@@ -49,7 +51,7 @@ def myFunc(x):
 #### Cons:					
 1. usage commands are not saved, often we want to save the function calls somewhere
 
-### Execution Workflow 3
+### Execution Workflow 3 - Command line to run custom modules w/ non-modular code
 #### Tools: terminal + editor: 
 #### Code: 1 file: function, followed by function call in .py script
 #### Usage: 				
@@ -67,7 +69,7 @@ def myFunc(x):
 	* This is because the function is tied to the function call, they should be separate, in different files.
 	* Also, from a git perspective, you should not need to edit the file that contains the function if all you are doing is changing how you are calling the function i.e. what arguments you pass it in some specific instance
 
-### Execution Workflow 4
+### Execution Workflow 4 - Command line to import and run code from script file w/ modular code
 #### terminal + editor  
 #### Code: 2 files:			
 1. 1 file with functions only
