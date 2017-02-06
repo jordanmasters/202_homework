@@ -6,27 +6,22 @@
 mkdir PythonBasicsTut1 && cd $_
 ```
 
-2. clone a quotes bot repo provided by scrapy
+2. Clone a simple quotes bot repo provided by scrapy
 ```shell
 git clone https://github.com/scrapy/quotesbot.git quotesbot
 cd quotesbot
+mkdir scrapedData
 ```
-3. Make sure you have Scrapy installed
+3. Let's start using Scrapy! Make sure you have it installed
 ```shell
-$ scrapy
-if it is not a command:
-$ pip install scrapy
+scrapy
+if it is not a command then do:
+pip install scrapy
 ```
 4. Check the spiders we have available
 ```shell
 spacy list
 ```
-5. make a directory for scraped data
-``
-```bash
-mkdir scrapedData
-```
-
 6. Use one of the spiders to pull and save data as .json or .csv
 ```shell
 scrapy crawl toscrape-css -o scrapedData/quotes.json
@@ -48,11 +43,16 @@ scrapy crawl toscrape-css -o scrapedData/quotes3.csv
 #### Code: no files, all in live interpreter
 
 1. start interpreter
-	* `python`
+```python```
 2. write code in interpreter
 ```python
->>> def myFunc(x):
->>>		return x^2
+import os
+def merge_csvs(directory, outfile):
+	for filename in os.listdir(directory):
+	    if filename.endswith(".csv"): 
+	        print(os.path.join(directory, filename))
+	    else:
+	        continue
 ```
 #### Usage:	python interpreter	 	
 1. call functions from same interpreter session only
