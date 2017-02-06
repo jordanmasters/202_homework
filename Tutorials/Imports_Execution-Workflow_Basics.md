@@ -43,22 +43,41 @@ scrapy crawl toscrape-css -o scrapedData/quotes3.csv
 #### Code: no files, all in live interpreter
 
 1. start interpreter
-```python```
+```shell
+python
+```
 2. write code in interpreter
 ```python
 import os
+import csv
 def merge_csvs(directory, outfile):
+	merged_csv_list = []
+	csv_count = 0
+	header = []
 	for filename in os.listdir(directory):
-	    if filename.endswith(".csv"): 
-	        print(os.path.join(directory, filename))
-	    else:
-	        continue
+		if filename.endswith(".csv"): 
+			csv_count += 1
+			print 'opening', os.path.join(directory, filename)
+			f = open(os.path.join(directory, filename), 'rU')
+			# simplify to basic list functions like readlines and split
+			csv_f = csv.reader(f)
+			csv_list = list(csv_f)
+			header = csv_list.pop(0)
+			for line in csv_list:
+				merged_csv_list.append(line)
+		else:
+			continue
+	print 'merged', csv_count, 'csv files into a python list'
+	print 'merged list has', len(merged_csv_list), 'rows'
+	return merged_csv_list, header
+
+
+
 ```
 #### Usage:	python interpreter	 	
 1. call functions from same interpreter session only
 ```python
->>> myFunc(4):
->>> 16
+merged_csv_list, header = merge_csvs('quotesbot','outfile1.')
 ```
 #### Pros:								
 1. check simple code (one liners), often w/ toy data 
