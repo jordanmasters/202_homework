@@ -9,34 +9,40 @@
 2. write code in interpreter
 	* `def myFunc():`
 
-#### Usage:			 	
+#### Usage:	python interpreter	 	
 1. call functions from same interpreter session only
-	*`myFunction()`
+	* `myFunction()`
 
 #### Pros:								
-1. check simple or internet code 
+1. check simple code (one liners), often w/ toy data 
 2. check your intuitions about data manipulation
 	1. ex: what does `myString[:-1]` give me when `myString = 'Hello'`?
 
 #### Cons:								
-1. not resuable or saved
+1. not reusable or saved
 2. no editor
 3. inefficient when writing more than a few lines of code
 
 ### Execution Workflow 2
 #### Tools: command line, python interpreter, text editor: 
-###### Req: 1 file w/ functions in myfile.py file
-1. Code:			
-	* Req: 1 file w/ only functions in myfile.py file
-2. Usage: 					
-	1. 'cd' into myfile.py file dir
-	2. 'python' to start interpreter
-	3. 'import myfile' to load module
+#### Code: 1 module (file)
+	* only functions in .py file			
+
+#### Usage: python interpreter				
+	1. move to into myfile.py file dir
+		* `$ cd`
+	2. start interpreter
+		* `$ python`
+	3. load module into current terminal session
+		* `>>> import myfile`
 	4. call function from module
-3. Pros:					
+		* `>>> myfile.myFunction()`
+
+#### Pros:					
 	1. Using the python interpreter to call functions can be useful if you are working with functions that output something, and you want to have a simple interactive environment to try various inputs and see their outputs, e.g. search engines, chatbots, question asking systems, etc.
 	2. interactive way to import various modules or packages and play with them live in the interpreter.
-4. Cons:					
+
+#### Cons:					
 	1. usage commands are not saved, often we want to save the function calls somewhere
 
 ### Execution Workflow 3
