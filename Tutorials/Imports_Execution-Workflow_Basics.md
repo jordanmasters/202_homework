@@ -26,17 +26,17 @@
 ### Execution Workflow 2
 #### Tools: command line, python interpreter, text editor: 
 #### Code: 1 module (file)
-	* only functions in .py file			
+* only functions in .py file			
 
 #### Usage: python interpreter				
 1. move to into myfile.py file dir
-	* `$ cd`
+`$ cd`
 2. start interpreter
 	* `$ python`
 3. load module into current terminal session
 	* `>>> import myfile`
 4. call function from module
-		* `>>> myfile.myFunction()`
+	* `>>> myfile.myFunction()`
 
 #### Pros:					
 1. Using the python interpreter to call functions can be useful if you are working with functions that output something, and you want to have a simple interactive environment to try various inputs and see their outputs, e.g. search engines, chatbots, question asking systems, etc.
