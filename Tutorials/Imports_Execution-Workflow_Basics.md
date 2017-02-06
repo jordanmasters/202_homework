@@ -1,24 +1,20 @@
 # Anaconda
-
-
 ## Python File Execution Workflows
-
-
-		### terminal + python interpreter: no files
-			1. Write: 				
-				1. 'python' to start interpreter
-				2. write code in interpreter
-			2. Usage:			 	
-				1. call functions from same interpreter session only
-						   
-			3. Pros:								
-				1. check simple or internet code 
-				2. check your intuitions about data manipulation
-					* ex: what does myString[:-1] give me if myString = 'Hello'?
-			4. Cons:								
-				1. not resuable or saved
-				2. no editor
-				3. inefficient when writing more than a few lines of code
+### terminal + python interpreter: no files
+1. Write: 				
+	1. 'python' to start interpreter
+	2. write code in interpreter
+2. Usage:			 	
+	1. call functions from same interpreter session only
+			   
+3. Pros:								
+	1. check simple or internet code 
+	2. check your intuitions about data manipulation
+		* ex: what does myString[:-1] give me if myString = 'Hello'?
+4. Cons:								
+	1. not resuable or saved
+	2. no editor
+	3. inefficient when writing more than a few lines of code
 
 		### terminal + editor: 1 file w/ functions in myfile.py file
 			1. Write:			
