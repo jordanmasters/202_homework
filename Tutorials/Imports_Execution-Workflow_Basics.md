@@ -11,9 +11,15 @@ cd quotesbot
 3. Make sure you have Scrapy installed
 `$ pip install scrapy`
 4. Check the spiders we have available
-`spacy list`
+```shell
+spacy list
+```
 5. make a directory for scraped data
-`mkdir data`
+``
+```bash
+mkdir data
+```
+
 5. Use one to pull and save file as .json or .csv
 `scrapy crawl toscrape-css -o quotes.json`
 
