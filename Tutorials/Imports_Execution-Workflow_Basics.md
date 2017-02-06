@@ -1,13 +1,15 @@
 # Anaconda
-## Python File Execution Workflows
+## Simp,e Python Execution Workflows
 ### Execution Workflow 1
-#### terminal + python interpreter: no files
-1. Write: 				
-	1. 'python' to start interpreter
+#### Tools: command line, python interpreter 
+###### 
+1. Code: 		
+	* Req: no files		
+	1. start interpreter
+		$ python
 	2. write code in interpreter
 2. Usage:			 	
 	1. call functions from same interpreter session only
-			   
 3. Pros:								
 	1. check simple or internet code 
 	2. check your intuitions about data manipulation
@@ -18,8 +20,10 @@
 	3. inefficient when writing more than a few lines of code
 
 ### Execution Workflow 2
-#### terminal + editor: 1 file w/ functions in myfile.py file
-1. Write:			
+#### Tools: command line, python interpreter, text editor: 
+###### Req: 1 file w/ functions in myfile.py file
+1. Code:			
+	* Req: 1 file w/ only functions in myfile.py file
 2. Usage: 					
 	1. 'cd' into myfile.py file dir
 	2. 'python' to start interpreter
@@ -33,7 +37,7 @@
 
 ### Execution Workflow 3
 ###$ terminal + editor: 1 file: function, followed by function call in .py script
-1. Write:				
+1. Code:				
 2. Usage: 				
 	1. 'cd' into myfile.py file dir
 	2. 'python myfile.py' to run file 
@@ -47,7 +51,7 @@
 
 ### Execution Workflow 4
 #### terminal + editor  
-1. Write:	
+1. Code:	
 	* 2 files:			
 		 * file with functions only
 		 * 'script' file to do imports and call functions 
