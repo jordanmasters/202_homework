@@ -80,8 +80,9 @@ import csv
 
 def merge_csvs_into_list(directory):
 	"""	
-	This function assumes all csvs in the directory have the same data structure (number of columns)
-	:param directory: the directory with csv files we want to merge
+	This function assumes all csvs in the directory have the same data structure (number of columns), 
+	otherwise csvs will have different numbers of columns and the merged list would be a mess.
+	:param directory: the directory with csv files we want to merge to a list
 	:returns: return list of lists of combined csv content  
 	"""
 	merged_csv_list = []
@@ -106,10 +107,10 @@ def merge_csvs_into_list(directory):
 
 def write_csv_from_list(new_file_path, cvs_list, header):
 	"""	
-	:param new_file_path: the directory with csv files
-	:param cvs_list: list of lists
+	:param new_file_path: the string 'filepath + file'
+	:param cvs_list: list of lists of quote data
 	:param header: list of header strings
-	:returns: return list of lists of merged csv contnt  
+	:returns: return list of lists of merged csv content w/ header  
 	"""
 	with open(new_file_path, "w") as output:
 		writer = csv.writer(output, lineterminator='\n')
