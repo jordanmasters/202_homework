@@ -15,18 +15,18 @@ mkdir scrapedData
 3) Let's start using Scrapy! Make sure you have it installed
 ```shell
 scrapy
-if it is not a command then do:
+# if it is not a command then do:
 pip install scrapy
 ```
 4) Check the spiders we have available
 ```shell
 scrapy list
 ```
-6) Use one of the spiders to pull and save data as .json or .csv
+6) Use one of the spider classes to pull and save data as .json or .csv
 ```shell
 scrapy crawl toscrape-css -o scrapedData/quotes.json
 ```
-7) Let's do it again to and make 3 csv files we can work with later 
+7) Let's do it again and make 3 csv files we can work with later 
 * yes, they will all have the same exact data, but importantly, they will also all have the same data structure)
 ```shell
 scrapy crawl toscrape-css -o scrapedData/quotes1.csv
@@ -35,10 +35,19 @@ scrapy crawl toscrape-css -o scrapedData/quotes3.csv
 ```
 
 
+## Simple Python Execution Workflows - Merging CSV files
 
-## Simple Python Execution Workflows
+### First let's merge these files in the command line
 
-### Execution Workflow 1 - Interpreter to write and execute code
+```shell
+cat *.csv > merged.csv
+```
+#### Pros:
+* fast, short code
+#### Cons: 
+* not easy to customize
+
+### Python Workflow 1 - Interpreter to write and execute code
 #### Tools: command line, python interpreter 
 #### Code: no files, all in live interpreter
 
@@ -51,10 +60,9 @@ python
 import os
 import csv
 
-# change/split to simple check_csvs function for inside interpreter and merge_csvs with part to complete
 
 
-def merge_csvs(directory, outfile):
+def merge_csv_into_list(directory):
 	"""	
 	:param directory: the directory with csv files
 	:returns: return list of lists of merged csv contnt  
@@ -79,7 +87,17 @@ def merge_csvs(directory, outfile):
 	print 'merged list has', len(merged_csv_list), 'rows'
 	return merged_csv_list, header
 
-
+def write_csv_from_list(new_file_path, cvs_list, header):
+	"""	
+	:param new_file_path: the directory with csv files
+	:param cvs_list: list of lists
+	:param header: list of header strings
+	:returns: return list of lists of merged csv contnt  
+	"""
+	with open(new_file_path, "w") as output:
+		writer = csv.writer(output, lineterminator='\n')
+		cvs_list.insert(0, header)
+		writer.writerows(cvs_list)
 
 
 ```
@@ -88,6 +106,7 @@ def merge_csvs(directory, outfile):
 ```python
 merged_csv_list, header = merge_csvs('quotesbot','outfile1.')
 ```
+
 #### Pros:								
 1. check simple code (one liners), often w/ toy data 
 2. check your intuitions about data manipulation
@@ -98,8 +117,8 @@ merged_csv_list, header = merge_csvs('quotesbot','outfile1.')
 2. no editor
 3. inefficient when writing more than a few lines of code
 
-### Execution Workflow 2 - Interpreter to import code from custom modules and execute code
-#### Tools: command line, python interpreter, text editor: 
+### Python Workflow 2 - Interpreter to import code from custom modules and execute code
+#### Tools: command line, python interpreter, text editor
 #### Code: 1 module (file)
 * Instead of writing our functions in the temporary memory of the interpreter, we can write them in a .py file somewhere
 
@@ -121,7 +140,7 @@ merged_csv_list, header = merge_csvs('quotesbot','outfile1.')
 #### Cons:					
 1. usage commands are not saved, often we want to save the function calls somewhere
 
-### Execution Workflow 3 - Command line to run custom modules w/ non-modular code
+### Python Workflow 3 - Command line to run custom modules w/ non-modular code
 #### Tools: terminal + editor: 
 #### Code: 1 file: function, followed by function call in .py script
 #### Usage: 				
@@ -139,7 +158,7 @@ merged_csv_list, header = merge_csvs('quotesbot','outfile1.')
 	* This is because the function is tied to the function call, they should be separate, in different files.
 	* Also, from a git perspective, you should not need to edit the file that contains the function if all you are doing is changing how you are calling the function i.e. what arguments you pass it in some specific instance
 
-### Execution Workflow 4 - Command line to run code from script file w/ modular code
+### Python Workflow 4 - Command line to run code from script file w/ modular code
 #### terminal + editor  
 #### Code: 2 files:			
 1. 1 file with functions only
