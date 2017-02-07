@@ -3,7 +3,7 @@
 ## Scrapy - Getting Quotes Data
 1) make a new project directory
 ```shell
-mkdir PythonBasicsTut1 && cd $_
+mkdir PythonBasics1 && cd $_
 ```
 
 2) Clone a simple quotes bot repo provided by scrapy
@@ -34,7 +34,7 @@ scrapy crawl toscrape-css -o scrapedData/quotes1.csv
 scrapy crawl toscrape-css -o scrapedData/quotes2.csv
 scrapy crawl toscrape-css -o scrapedData/quotes3.csv
 ```
-8) move back into PythonBasicsTut1 dir
+8) move back into PythonBasics1 dir
 ```shell
 cd ..
 ```
@@ -44,7 +44,7 @@ cd ..
 ### First let's merge these files in the command line
 
 ```shell
-cat myScraper/scrapedData/*.csv > mergedData/merged1.csv
+cat myScraper/scrapedData/*.csv > mergedData/merged0.csv
 ```
 #### Pros
 * fast, short code
@@ -55,9 +55,9 @@ cat myScraper/scrapedData/*.csv > mergedData/merged1.csv
 
 #### Can we get closer?
 ```shell
-tail -n +2 myScraper/scrapedData/*.csv > mergedData/merged2.csv
+tail -n +2 myScraper/scrapedData/*.csv > mergedData/merged0-1.csv
 ```
-#### This could get difficult if we want more than a one-liner, let's try it in python
+#### This is fast but could be limiting if we want to do more with the data, let's try it in python
 
 ### Python Workflow 1 - Use interpreter to write and execute code
 #### Tools: command line, python interpreter 
@@ -119,7 +119,7 @@ merged_csv_list, header = merge_csvs_into_list('myScraper/scrapedData')
 ```
 2) Call function to join list of lists w/ list of header, then export to csv
 ```python
-write_csv_from_list('python_merged_quotes.csv', merged_csv_list, header)
+write_csv_from_list('mergedData/merged1.csv', merged_csv_list, header)
 ```
 
 #### Pros:								
@@ -136,7 +136,7 @@ write_csv_from_list('python_merged_quotes.csv', merged_csv_list, header)
 #### Tools: command line, python interpreter, text editor
 #### Code: 1 module (file)
 * Instead of writing our functions in the temporary memory of the interpreter, we can write them in a csv_merge.py file somewhere
-* copy and paste the CSV Merge Code into a new file csv_merge.py, just inside the PythonBasicsTut1 directory
+* copy and paste the CSV Merge Code into a new file csv_merge.py, just inside the PythonBasics1 directory
 #### Usage: python interpreter				
 
 2) start interpreter
@@ -150,7 +150,7 @@ import csv_merge
 4) call functions from module with module namespace
 ```python
 merged_csv_list, header = csv_merge.merge_csvs_into_list('myScraper/scrapedData')
-csv_merge.write_csv_from_list('python_merged_quotes.csv', merged_csv_list, header)
+csv_merge.write_csv_from_list('mergedData/merged2.csv', merged_csv_list, header)
 
 ```
 
@@ -168,7 +168,7 @@ csv_merge.write_csv_from_list('python_merged_quotes.csv', merged_csv_list, heade
 #### Code: 1 file: function, followed by function call in csv_merge.py script
 #### Usage: 	
 
-1) move to into csv_merge.py file dir
+1) move code to into csv_merge.py file dir and change the output: mergedData/merged2.csv -> mergedData/merged3.csv
 
 2) Run file from command line
 ```shell
@@ -192,10 +192,11 @@ python csv_merge.py
 			* a script file is a file containing mostly commands like you would enter in the command line or in an interpreter. it allows you to chain dependencies and function calls together in a modular and resuable fashion, keeping your functions separate.
 
 #### Usage: 				
-1) navigate to csv_merge.py file dir and make a new file called run_quotes_merge.py
+1) make a new file called run_quotes_merge.py
 
 2) put the calls to the function inside run_quotes_merge.py
 
+3) change the output location: mergedData/merged3.csv -> mergedData/merged4.csv
 3) Run script file from command line
 ```shell
 python run_quotes_merge.py
@@ -208,7 +209,7 @@ python run_quotes_merge.py
 
 #### Cons:					
 	* little bit more organization upfront
-	
+
 
 
 
