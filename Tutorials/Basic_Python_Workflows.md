@@ -87,7 +87,7 @@ def merge_csvs_into_list(directory):
 		if filename.endswith(".csv"): 
 			csv_count += 1
 			print 'opening', os.path.join(directory, filename)
-			f = open(os.path.join(directory, filename), 'rU')
+			f = open(os.path.join(directory, filename))
 			# simplify to basic list functions like readlines and split
 			csv_f = csv.reader(f)
 			csv_list = list(csv_f)
@@ -168,9 +168,16 @@ csv_merge.write_csv_from_list('mergedData/merged2.csv', merged_csv_list, header)
 #### Code: 1 file: function, followed by function call in csv_merge.py script
 #### Usage: 	
 
-1) move code to into csv_merge.py file dir and change the output: mergedData/merged2.csv -> mergedData/merged3.csv
+1) move code to into csv_merge.py file dir
+* change the output file: mergedData/merged2.csv -> mergedData/merged3.csv
+* change the namespace for the function: csv_merge.merge_csvs_into_list() -> merge_csvs_into_list(), b/c we are no longer calling the funciton through importing the module
 
-2) Run file from command line
+2) paste both function calls into bottom of csv_merge.py
+```shell
+python csv_merge.py
+```		
+
+3) Run file from command line
 ```shell
 python csv_merge.py
 ```		
@@ -185,7 +192,7 @@ python csv_merge.py
 	* Also, from a git perspective, you should not need to edit the file that contains the function if all you are doing is changing how you are calling the function i.e. what arguments you pass it in some specific instance
 
 ### Python Workflow 4 - Command line to run code from script file w/ modular code
-#### terminal + editor  
+#### Tools: terminal + editor  
 #### Code: 2 files:			
 1) 1 file with functions only
 2) 1 file as a 'script' file to do imports and call functions 
@@ -194,7 +201,7 @@ python csv_merge.py
 #### Usage: 				
 1) make a new file called run_quotes_merge.py
 
-2) put the calls to the function inside run_quotes_merge.py
+2) move the function calls from csv_merge to run_quotes_merge.py
 
 3) change the output location: mergedData/merged3.csv -> mergedData/merged4.csv
 3) Run script file from command line
