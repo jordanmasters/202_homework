@@ -9,7 +9,6 @@ mkdir PythonBasics1 && cd $_
 2) Clone a simple quotes bot repo provided by scrapy
 ```shell
 git clone https://github.com/scrapy/quotesbot.git myScraper
-mkdir mergedData
 cd myScraper
 mkdir scrapedData
 ```
@@ -41,9 +40,10 @@ cd ..
 
 ## Simple Python Execution Workflows - Merging CSV files
 
-### First let's merge these files in the command line
+### Before Python, let's merge these files in the command line
 
 ```shell
+mkdir mergedData # make a folder where we will soon put our merged data
 cat myScraper/scrapedData/*.csv > mergedData/merged0.csv
 ```
 #### Pros
@@ -208,7 +208,7 @@ python run_quotes_merge.py
 3) DRY - Don't Repeat Yourself 
 
 #### Cons:					
-	* little bit more organization upfront
+* little bit more organization upfront
 
 
 
