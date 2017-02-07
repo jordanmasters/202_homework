@@ -12,7 +12,8 @@ git clone https://github.com/scrapy/quotesbot.git myScraper
 cd myScraper
 mkdir scrapedData
 ```
-3) Let's start using Scrapy! Make sure you have it installed
+3) Before we use it, let's take a quick look inside
+4) Let's start using Scrapy! Make sure you have it installed
 ```shell
 scrapy
 # if it is not a command then do:
@@ -161,7 +162,9 @@ csv_merge.write_csv_from_list('mergedData/merged2.csv', merged_csv_list, header)
 
 #### Pros:					
 1) Using the python interpreter to call functions can be useful if want a simple environment to try various inputs interactively and see their outputs, e.g. search engines, chatbots, question asking systems, etc
+
 2) interactive way to import and test various modules or packages
+
 3) Modular, Resuable
 
 #### Cons:					
