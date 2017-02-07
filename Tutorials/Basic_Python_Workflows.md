@@ -1,6 +1,6 @@
 # Python Basics
 
-## Scrapy - Getting Quotes Data
+## 1) Scrapy - Getting Quotes Data
 1) make a new project directory
 ```shell
 mkdir PythonBasics1 && cd $_
@@ -38,7 +38,7 @@ scrapy crawl toscrape-css -o scrapedData/quotes3.csv
 cd ..
 ```
 
-## Simple Python Execution Workflows - Merging CSV files
+## 2) Simple Python Execution Workflows - Merging CSV files
 
 ### Before Python, let's merge these files in the command line
 
