@@ -1,7 +1,7 @@
 # Python Basics
 
-## Scrapy Demo - Getting the Data
-1) make a new project directory somewhere
+## Scrapy - Getting Quotes Data
+1) make a new project directory
 ```shell
 mkdir PythonBasicsTut1 && cd $_
 ```
@@ -9,6 +9,7 @@ mkdir PythonBasicsTut1 && cd $_
 2) Clone a simple quotes bot repo provided by scrapy
 ```shell
 git clone https://github.com/scrapy/quotesbot.git quotesbot
+mkdir mergedData
 cd quotesbot
 mkdir scrapedData
 ```
@@ -22,7 +23,7 @@ pip install scrapy
 ```shell
 scrapy list
 ```
-6) Use one of the spider classes to pull and save data as .json or .csv
+6) Use one of those spider classes to pull and save data as .json or .csv
 ```shell
 scrapy crawl toscrape-css -o scrapedData/quotes.json
 ```
@@ -33,45 +34,51 @@ scrapy crawl toscrape-css -o scrapedData/quotes1.csv
 scrapy crawl toscrape-css -o scrapedData/quotes2.csv
 scrapy crawl toscrape-css -o scrapedData/quotes3.csv
 ```
-
+8) move back into PythonBasicsTut1 dir
+```shell
+cd ..
+```
 
 ## Simple Python Execution Workflows - Merging CSV files
 
 ### First let's merge these files in the command line
 
 ```shell
-cat *.csv > merged.csv
+cat quotesbot/scrapedData/*.csv > mergedData/merged1.csv
 ```
 #### Pros
 * fast, short code
 
 #### Cons
 * not easy to customize
-* we had headers in each of the files, and each of those headers in now in the merged file
+* we had headers in each of the files, and all of headers are now in the merged file
 
-#### Can the 'tail' command get us closer?
+#### Can we get closer?
 ```shell
-tail -n +2 *.csv > merged.csv
+tail -n +2 quotesbot/scrapedData/*.csv > mergedData/merged2.csv
 ```
+#### This could get difficult, let's try it in python
 
-### Python Workflow 1 - Interpreter to write and execute code
+### Python Workflow 1 - Use interpreter to write and execute code
 #### Tools: command line, python interpreter 
 #### Code: no files, all in live interpreter
 
-1. start interpreter
+
+
+2) start interpreter
 ```shell
 python
 ```
-2. write code in interpreter
+3) CSV Merge Code: copy paste into interpreter
 ```python
 import os
 import csv
 
-
 def merge_csvs_into_list(directory):
 	"""	
-	:param directory: the directory with csv files
-	:returns: return list of lists of merged csv contnt  
+	This function assumes all csvs in the directory have the same data structure (number of columns)
+	:param directory: the directory with csv files we want to merge
+	:returns: return list of lists of combined csv content  
 	"""
 	merged_csv_list = []
 	csv_count = 0
@@ -104,124 +111,102 @@ def write_csv_from_list(new_file_path, cvs_list, header):
 		writer = csv.writer(output, lineterminator='\n')
 		cvs_list.insert(0, header)
 		writer.writerows(cvs_list)
-
-
 ```
-#### Usage:	python interpreter	 	
-1. call functions from same interpreter session only
+#### Usage:	python interpreter - same interpreter session only
+1) Call the function to merge all csvs in a folder into a python list 
 ```python
-merged_csv_list, header = merge_csvs_into_list('quotesbot')
+merged_csv_list, header = merge_csvs_into_list('quotesbot/scrapedData')
 ```
+2) 
 ```python
 write_csv_from_list('python_merged_quotes.csv', merged_csv_list, header)
 ```
 
 #### Pros:								
-1. check simple code (one liners), often w/ toy data 
-2. check your intuitions about data manipulation
-	1. ex: what does `myString[:-1]` give me when `myString = 'Hello'`?
+1) check simple code (one liners), often w/ toy data 
+2) check your intuitions about data manipulation
+	* ex: what does `myString[:-1]` give me when `myString = 'Hello'`?
 
 #### Cons:								
-1. not reusable or saved
-2. no editor
-3. inefficient when writing more than a few lines of code
+1) not reusable or saved
+2) no editor
+3) inefficient when writing more than a few lines of code
 
-### Python Workflow 2 - Interpreter to import code from custom modules and execute code
+### Python Workflow 2 - Use interpreter to import code from custom modules and execute code
 #### Tools: command line, python interpreter, text editor
 #### Code: 1 module (file)
-* Instead of writing our functions in the temporary memory of the interpreter, we can write them in a .py file somewhere
-
+* Instead of writing our functions in the temporary memory of the interpreter, we can write them in a csv_merge.py file somewhere
+* copy and paste the CSV Merge Code into a new file csv_merge.py, just inside the PythonBasicsTut1 directory
 #### Usage: python interpreter				
-1. move to into myfile.py file dir
-	* `$ cd`
-2. start interpreter
-	* `$ python`
-3. load module into current terminal session
-	* `>>> import myfile`
-4. call function from module
-	* `>>> myfile.myFunction()`
+
+2) start interpreter
+```shell
+python
+```
+3) load module into current terminal session
+```python
+import csv_merge
+```
+4) call functions from module with module namespace
+```python
+merged_csv_list, header = csv_merge.merge_csvs_into_list('quotesbot/scrapedData')
+csv_merge.write_csv_from_list('python_merged_quotes.csv', merged_csv_list, header)
+
+```
 
 
 #### Pros:					
-1. Using the python interpreter to call functions can be useful if you are working with functions that output something, and you want to have a simple interactive environment to try various inputs and see their outputs, e.g. search engines, chatbots, question asking systems, etc.
-2. interactive way to import various modules or packages and play with them live in the interpreter.
+1) Using the python interpreter to call functions can be useful if want a simple environment to try various inputs interactively and see their outputs, e.g. search engines, chatbots, question asking systems, etc
+2) interactive way to import and test various modules or packages
+3) Modular, Resuable
 
 #### Cons:					
-1. usage commands are not saved, often we want to save the function calls somewhere
+1) usage commands are not saved, often we want to save the function calls somewhere
 
 ### Python Workflow 3 - Command line to run custom modules w/ non-modular code
 #### Tools: terminal + editor: 
-#### Code: 1 file: function, followed by function call in .py script
-#### Usage: 				
-1. move to into myfile.py file dir
-	* `$ cd`
-2. Run file from command line
-	* `$ python myfile.py`
+#### Code: 1 file: function, followed by function call in csv_merge.py script
+#### Usage: 	
+
+1) move to into csv_merge.py file dir
+
+2) Run file from command line
+```shell
+python csv_merge.py
+```		
 
 #### Pros:					
-1. will both load your function and execute it (will execute everything in the .py synchronously)
+1) will both load your function and execute it (will execute everything in the .py synchronously)
 
 #### Cons:
-1. not resuable, except in this exact use case, 
-2. bad coding practice
-	* This is because the function is tied to the function call, they should be separate, in different files.
+1) not resuable, except in this exact use case, 
+2) bad coding practice
+	* This is because the function is tied to the function call, they could be separate, in different files.
 	* Also, from a git perspective, you should not need to edit the file that contains the function if all you are doing is changing how you are calling the function i.e. what arguments you pass it in some specific instance
 
 ### Python Workflow 4 - Command line to run code from script file w/ modular code
 #### terminal + editor  
 #### Code: 2 files:			
-1. 1 file with functions only
-2. 1 file as a 'script' file to do imports and call functions 
+1) 1 file with functions only
+2) 1 file as a 'script' file to do imports and call functions 
 			* a script file is a file containing mostly commands like you would enter in the command line or in an interpreter. it allows you to chain dependencies and function calls together in a modular and resuable fashion, keeping your functions separate.
 
 #### Usage: 				
-1. move to into myfile.py file dir
-	* `$ cd`
-2. Run file from command line
-	* `$ python myfile.py`
+1) move to into csv_merge.py file dir
+
+2) Run file from command line
+```shell
+python csv_merge.py
 
 #### Pros:					
-1. Modular, Resuable 
-2. often we want to call more a set of command in some specific order, and save it for later
-3. DRY - Don't Repeat Yourself 
+1) Modular, Resuable 
+2) often we want to call more a set of command in some specific order, and save it for later
+3) DRY - Don't Repeat Yourself 
 
 #### Cons:					
-	* little bit more organization upfront
+	* little bit more organization upfront - maybe
 
 
-
-
-
-
-
-
-
-
-
-
-							   python -> import -> call function from python interpreter
-
-
-
-			terminal 1 file -> python filename.py
-
-			terminal -> python -> call function
-
-
-
-
-
-tools:
-	Python Notebook
-	spyder
-	terminal
-	qt console
-
-
-
-
-Coding:
-	python packages vs libraries
 
 
 
