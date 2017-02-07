@@ -93,7 +93,6 @@ def merge_csvs_into_list(directory):
 			csv_count += 1
 			print 'opening', os.path.join(directory, filename)
 			f = open(os.path.join(directory, filename))
-			# simplify to basic list functions like readlines and split
 			csv_f = csv.reader(f)
 			csv_list = list(csv_f)
 			header = csv_list.pop(0)
@@ -122,7 +121,7 @@ def write_csv_from_list(new_file_path, cvs_list, header):
 ```python
 merged_csv_list, header = merge_csvs_into_list('myScraper/scrapedData')
 ```
-2) Call function to join list of lists w/ list of header, then export to csv
+2) Call function to join list of lists w/ list of header strings and export to csv
 ```python
 write_csv_from_list('mergedData/merged1.csv', merged_csv_list, header)
 ```
@@ -170,19 +169,14 @@ csv_merge.write_csv_from_list('mergedData/merged2.csv', merged_csv_list, header)
 
 ### Python Workflow 3 - Command line to run custom modules w/ non-modular code
 #### Tools: terminal + editor: 
-#### Code: 1 file: function, followed by function call in csv_merge.py script
+#### Code: 1 file: function, followed by function call in csv_merge.py 
 #### Usage: 	
 
-1) move code to into csv_merge.py file dir
-* change the output file: mergedData/merged2.csv -> mergedData/merged3.csv
+1) create and move functions into csv_merge.py file
+* change the output pointer: mergedData/merged2.csv -> mergedData/merged3.csv
 * change the namespace for the function: csv_merge.merge_csvs_into_list() -> merge_csvs_into_list(), b/c we are no longer calling the funciton through importing the module
 
-2) paste both function calls into bottom of csv_merge.py
-```shell
-python csv_merge.py
-```		
-
-3) Run file from command line
+2) paste both function calls at the bottom of csv_merge.py then do
 ```shell
 python csv_merge.py
 ```		
@@ -205,11 +199,10 @@ python csv_merge.py
 
 #### Usage: 				
 1) make a new file called run_quotes_merge.py
-
-2) move the function calls from csv_merge to run_quotes_merge.py
-
-3) change the output location: mergedData/merged3.csv -> mergedData/merged4.csv
-3) Run script file from command line
+2) move the function calls from csv_merge.py to run_quotes_merge.py
+3) import the csv_merge module into run_quotes_merge and change namespace again.
+4) change the output pointer: mergedData/merged3.csv -> mergedData/merged4.csv
+5) Run script file from command line
 ```shell
 python run_quotes_merge.py
 ```
