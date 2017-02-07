@@ -18,8 +18,8 @@ scrapy
 # if it is not a command then do:
 pip install scrapy
 # note: if you can't get scrapy installed for some reason, 
-# you can grab the csv folder of CSVs it would generate, the s
-# crapedData folder. scrapedData folder should be put inside the myScraper folder. 
+# you can grab the csv folder of CSVs it would generate, the 
+# scrapedData folder. scrapedData folder should be put inside the myScraper folder. 
 # Skip steps 4-7.
 ```
 4) Check the spiders we have available
