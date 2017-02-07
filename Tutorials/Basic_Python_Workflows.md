@@ -8,9 +8,9 @@ mkdir PythonBasicsTut1 && cd $_
 
 2) Clone a simple quotes bot repo provided by scrapy
 ```shell
-git clone https://github.com/scrapy/quotesbot.git quotesbot
+git clone https://github.com/scrapy/quotesbot.git myScraper
 mkdir mergedData
-cd quotesbot
+cd myScraper
 mkdir scrapedData
 ```
 3) Let's start using Scrapy! Make sure you have it installed
@@ -44,7 +44,7 @@ cd ..
 ### First let's merge these files in the command line
 
 ```shell
-cat quotesbot/scrapedData/*.csv > mergedData/merged1.csv
+cat myScraper/scrapedData/*.csv > mergedData/merged1.csv
 ```
 #### Pros
 * fast, short code
@@ -55,9 +55,9 @@ cat quotesbot/scrapedData/*.csv > mergedData/merged1.csv
 
 #### Can we get closer?
 ```shell
-tail -n +2 quotesbot/scrapedData/*.csv > mergedData/merged2.csv
+tail -n +2 myScraper/scrapedData/*.csv > mergedData/merged2.csv
 ```
-#### This could get difficult, let's try it in python
+#### This could get difficult if we want more than a one-liner, let's try it in python
 
 ### Python Workflow 1 - Use interpreter to write and execute code
 #### Tools: command line, python interpreter 
@@ -65,11 +65,11 @@ tail -n +2 quotesbot/scrapedData/*.csv > mergedData/merged2.csv
 
 
 
-2) start interpreter
+1) start interpreter
 ```shell
 python
 ```
-3) CSV Merge Code: copy paste into interpreter
+2) CSV Merge Code: copy paste into interpreter
 ```python
 import os
 import csv
@@ -115,9 +115,9 @@ def write_csv_from_list(new_file_path, cvs_list, header):
 #### Usage:	python interpreter - same interpreter session only
 1) Call the function to merge all csvs in a folder into a python list 
 ```python
-merged_csv_list, header = merge_csvs_into_list('quotesbot/scrapedData')
+merged_csv_list, header = merge_csvs_into_list('myScraper/scrapedData')
 ```
-2) 
+2) Call function to join list of lists w/ list of header, then export to csv
 ```python
 write_csv_from_list('python_merged_quotes.csv', merged_csv_list, header)
 ```
@@ -149,7 +149,7 @@ import csv_merge
 ```
 4) call functions from module with module namespace
 ```python
-merged_csv_list, header = csv_merge.merge_csvs_into_list('quotesbot/scrapedData')
+merged_csv_list, header = csv_merge.merge_csvs_into_list('myScraper/scrapedData')
 csv_merge.write_csv_from_list('python_merged_quotes.csv', merged_csv_list, header)
 
 ```
@@ -179,8 +179,8 @@ python csv_merge.py
 1) will both load your function and execute it (will execute everything in the .py synchronously)
 
 #### Cons:
-1) not resuable, except in this exact use case, 
-2) bad coding practice
+1) not that resuable, except in this exact use case
+2) bad coding practice (not modular)
 	* This is because the function is tied to the function call, they could be separate, in different files.
 	* Also, from a git perspective, you should not need to edit the file that contains the function if all you are doing is changing how you are calling the function i.e. what arguments you pass it in some specific instance
 
@@ -192,19 +192,23 @@ python csv_merge.py
 			* a script file is a file containing mostly commands like you would enter in the command line or in an interpreter. it allows you to chain dependencies and function calls together in a modular and resuable fashion, keeping your functions separate.
 
 #### Usage: 				
-1) move to into csv_merge.py file dir
+1) navigate to csv_merge.py file dir and make a new file called run_quotes_merge.py
 
-2) Run file from command line
+2) put the calls to the function inside run_quotes_merge.py
+
+3) Run script file from command line
 ```shell
-python csv_merge.py
+python run_quotes_merge.py
+```
 
 #### Pros:					
 1) Modular, Resuable 
-2) often we want to call more a set of command in some specific order, and save it for later
+2) often we want to call a number of commands in some specific order, and save it for later, but keep the functions separate
 3) DRY - Don't Repeat Yourself 
 
 #### Cons:					
-	* little bit more organization upfront - maybe
+	* little bit more organization upfront
+	
 
 
 
