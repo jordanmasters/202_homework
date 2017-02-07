@@ -27,7 +27,7 @@ scrapy list
 scrapy crawl toscrape-css -o scrapedData/quotes.json
 ```
 7) Let's do it again and make 3 csv files we can work with later 
-* yes, they will all have the same exact data, but importantly, they will also all have the same data structure)
+* yes, they will all have the same exact data, but importantly, they will also all have the same data structure
 ```shell
 scrapy crawl toscrape-css -o scrapedData/quotes1.csv
 scrapy crawl toscrape-css -o scrapedData/quotes2.csv
@@ -42,10 +42,17 @@ scrapy crawl toscrape-css -o scrapedData/quotes3.csv
 ```shell
 cat *.csv > merged.csv
 ```
-#### Pros:
+#### Pros
 * fast, short code
-#### Cons: 
+
+#### Cons
 * not easy to customize
+* we had headers in each of the files, and each of those headers in now in the merged file
+
+#### Can the 'tail' command get us closer?
+```shell
+tail -n +2 *.csv > merged.csv
+```
 
 ### Python Workflow 1 - Interpreter to write and execute code
 #### Tools: command line, python interpreter 
@@ -61,8 +68,7 @@ import os
 import csv
 
 
-
-def merge_csv_into_list(directory):
+def merge_csvs_into_list(directory):
 	"""	
 	:param directory: the directory with csv files
 	:returns: return list of lists of merged csv contnt  
@@ -104,7 +110,10 @@ def write_csv_from_list(new_file_path, cvs_list, header):
 #### Usage:	python interpreter	 	
 1. call functions from same interpreter session only
 ```python
-merged_csv_list, header = merge_csvs('quotesbot','outfile1.')
+merged_csv_list, header = merge_csvs_into_list('quotesbot')
+```
+```python
+write_csv_from_list('python_merged_quotes.csv', merged_csv_list, header)
 ```
 
 #### Pros:								
