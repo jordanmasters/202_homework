@@ -164,7 +164,7 @@ csv_merge.write_csv_from_list('mergedData/merged2.csv', merged_csv_list, header)
 1) Using the python interpreter to call functions can be useful if want a simple environment to try various inputs interactively and see their outputs, e.g. search engines, chatbots, question asking systems, etc
 
 2) interactive way to import and test various modules or packages
-
+Q
 3) Modular, Resuable
 
 #### Cons:					
