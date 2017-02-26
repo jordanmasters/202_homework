@@ -1,0 +1,2 @@
+# i would recomend running this with a square canvase size for width and height
+# at sizes larger than around 180 width and height, you should strech the terminal window so it is huge, like and allows each line of the program to print correctly
