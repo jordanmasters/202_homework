@@ -13,7 +13,6 @@ seed = '<sentence>'
 
 # the rules
 nonterminal_rules = [ 
-['<paragraph>',             ['<sentence>','<sentence>']],
 ['<sentence>',              ['<noun phrase>', '<verb phrase>']],
 ['<noun phrase>',           ['<det>','<noun>']],            
 ['<verb phrase>',           ['<verb>','<det>','<noun>','<END>']],            
@@ -33,14 +32,14 @@ chain = []
 # chain seed to second layer of non-terminals
 chain = Grammar1_tools.chain_nonterminal(chain,seed,nonterminals,nonterminal_rules)
 
-
+# Now that chain has been seeded, run through the dependency tree and until we hit the end
+# output a counter and chain for each level of the tree
 counters,chains = Grammar1_tools.chain_nonterminals(chain,nonterminals,nonterminal_rules)
 
 # take the terminal chain from chains and remove generational build-up
 nonterminal_set = chains[-1][counters[-2]:]
-# print nonterminal_set
 
-# print ten sentences
+# print example sentences
 for i in range(10):
     print Grammar1_tools.populate_terminals(nonterminal_set,terminal_rules)
 
